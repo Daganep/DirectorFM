@@ -1,0 +1,23 @@
+ext.versions = [
+    core                : '1.10.0',
+    appcompat           : '1.6.1',
+    material            : '1.8.0',
+    constraintlayout    : '2.1.4',
+    junit               : '4.13.2',
+    extJunit            : '1.1.5',
+    espressoCore        : '3.5.1'
+]
+
+ext.gradlePlugins = [
+
+]
+
+ext.libraries = [
+    androidxCore                : "androidx.core:core-ktx:$versions.core",
+    androidxAppCompat           : "androidx.appcompat:appcompat:$versions.appcompat",
+    androidMaterial             : "com.google.android.material:material:$versions.material",
+    androidxConstraintlayout    : "androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
+    testsJunit                  : "junit:junit:$versions.junit",
+    testsExtJunit               : "androidx.test.ext:junit:$versions.extJunit",
+    testsEspresso               : "androidx.test.espresso:espresso-core:$versions.espressoCore"
+]
