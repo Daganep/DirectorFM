@@ -30,6 +30,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
+    }
+
 }
 
 dependencies {
@@ -40,8 +49,22 @@ dependencies {
     implementation libraries.androidMaterial
     implementation libraries.androidxConstraintlayout
 
+    //compose
+    def composeBom = platform(libraries.composeBom)
+    implementation composeBom
+    androidTestImplementation composeBom
+    implementation libraries.composeMaterial3
+    implementation libraries.composeUIToolingPreview
+    implementation libraries.composeActivity
+    implementation libraries.composeLifecycleViewmodel
+    implementation libraries.composeRuntimeLivedata
+    implementation libraries.composeRuntimeRxjava2
+    debugImplementation libraries.composeUITooling
+    debugImplementation libraries.composeUITestManifest
+
     // tests
     testImplementation          libraries.testsJunit
     androidTestImplementation   libraries.testsExtJunit
     androidTestImplementation   libraries.testsEspresso
+    androidTestImplementation   libraries.testsComposeJunit
 }
