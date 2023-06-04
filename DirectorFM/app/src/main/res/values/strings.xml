@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DirectorFM</string>
+
+    //home screen elements
+    <string name="home_screen_internal_storage">Internal storage</string>
+    <string name="home_screen_bookmarks">Bookmarks</string>
+    <string name="home_screen_documents">Documents</string>
+    <string name="home_screen_photos">Photos</string>
+    <string name="home_screen_downloads">Downloads</string>
+    <string name="home_screen_applications">Applications</string>
 </resources>
