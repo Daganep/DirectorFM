@@ -15,5 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "DirectorFM"
 include ':app'
 include ':buildsystem'
-include ':data'
 include ':domain'
+include ':data'

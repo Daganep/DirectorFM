@@ -44,10 +44,21 @@ android {
 dependencies {
 
     // core
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
     implementation libraries.androidxCore
     implementation libraries.androidxAppCompat
     implementation libraries.androidMaterial
     implementation libraries.androidxConstraintlayout
+
+    //viewmodel
+    implementation libraries.viewModel
+    implementation libraries.liveData
+
+    //koin
+    implementation libraries.koinCore
+    implementation libraries.koinAndroid
+    implementation libraries.koinCompose
 
     //compose
     def composeBom = platform(libraries.composeBom)

@@ -1,5 +1,5 @@
 ext.versions = [
-    core                : '1.10.0',
+    core                : '1.10.1',
     appcompat           : '1.6.1',
     material            : '1.8.0',
     constraintlayout    : '2.1.4',
@@ -8,7 +8,11 @@ ext.versions = [
     extJunit            : '1.1.5',
     espressoCore        : '3.5.1',
     composeActivity     : '1.7.1',
-    composeViewmodel    : '2.6.1'
+    composeViewmodel    : '2.6.1',
+    lifecycle           : '2.6.1',
+    koin_core           : '3.4.1',
+    koin_android        : '3.4.1',
+    koin_compose        : '3.4.5'
 ]
 
 ext.gradlePlugins = [
@@ -30,6 +34,13 @@ ext.libraries = [
     composeLifecycleViewmodel   :"androidx.lifecycle:lifecycle-viewmodel-compose:$versions.composeViewmodel",
     composeRuntimeLivedata      :"androidx.compose.runtime:runtime-livedata",
     composeRuntimeRxjava2       :"androidx.compose.runtime:runtime-rxjava2",
+
+    koinCore                    :"io.insert-koin:koin-core:$versions.koin_core",
+    koinAndroid                 :"io.insert-koin:koin-android:$versions.koin_android",
+    koinCompose                 :"io.insert-koin:koin-androidx-compose:$versions.koin_compose",
+
+    viewModel                   :"androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle",
+    liveData                    :"androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
 
     testsJunit                  : "junit:junit:$versions.junit",
     testsExtJunit               : "androidx.test.ext:junit:$versions.extJunit",
