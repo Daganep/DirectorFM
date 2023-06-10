@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DirectorFM</string>
+
+    //Элементы стартового экрана
+    <string name="home_screen_internal_storage">Память устройства</string>
+    <string name="home_screen_bookmarks">Закладки</string>
+    <string name="home_screen_documents">Документы</string>
+    <string name="home_screen_photos">Фото</string>
+    <string name="home_screen_downloads">Загрузки</string>
+    <string name="home_screen_applications">Приложения</string>
+</resources>
