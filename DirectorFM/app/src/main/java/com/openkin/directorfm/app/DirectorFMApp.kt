@@ -1,4 +1,4 @@
-package com.openkin.directorfm
+package com.openkin.directorfm.app
 
 import android.app.Application
 import com.openkin.directorfm.di.appModule
