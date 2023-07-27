@@ -10,9 +10,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.ui.res.stringResource
 import com.openkin.directorfm.R
-import com.openkin.directorfm.ui.screens.BaseAlertDialog
+import com.openkin.directorfm.ui.screens.PermissionDialog
 import com.openkin.directorfm.ui.screens.StartScreen
 import com.openkin.directorfm.ui.theme.DirectorFMTheme
 import kotlin.system.exitProcess
@@ -23,13 +22,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             if (!Environment.isExternalStorageManager()) {
-                BaseAlertDialog(
-                    dialogTitle = stringResource(id = R.string.permission_dialog_all_files_title),
-                    dialogText = stringResource(id = R.string.permission_dialog_all_files_text),
+                PermissionDialog(
                     onConfirm = { requestPermissions() },
-                    onDismiss = {
-                        exitProcess(0)
-                    }
+                    onDismiss = { exitProcess(0) }
                 )
             }
             DirectorFMTheme {
@@ -42,7 +37,7 @@ class MainActivity : ComponentActivity() {
         val intent = Intent()
         try {
             intent.action = Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION
-            val uri: Uri = Uri.fromParts("package", this.packageName, null)
+            val uri: Uri = Uri.fromParts(SCHEME, this.packageName, null)
             intent.data = uri
             storageActivityResultLauncher.launch(intent)
         } catch (exception: Exception) {
@@ -61,4 +56,8 @@ class MainActivity : ComponentActivity() {
                 ).show()
             }
         }
+
+    companion object {
+        private const val SCHEME = "package"
+    }
 }

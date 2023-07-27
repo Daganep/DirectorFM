@@ -19,11 +19,15 @@
 
     //Получение разрешений
     <string name="permission_dialog_all_files_title">Необходимо разрешение</string>
-    <string name="permission_dialog_all_files_text"><html><body>Начиная с Android 11, Google запрашивает у файловых менеджеров разрешение пользователя на управление всеми файлами на устройстве. Подробности <a href="https://developer.android.com/training/data-storage/manage-all-files" target="_blank">здесь</a>.
-        \n\nDirectorFM также нуждается в этом разрешении. Нажав «Предоставить» здесь, выберите <b>Allow access to manage all files</b> на следующем экране.
+    <string name="permission_dialog_all_files_text"><html><body>Начиная с Android 11, Google запрашивает у файловых менеджеров разрешение пользователя на управление всеми файлами на устройстве. Подробности: https://developer.android.com/training/data-storage/manage-all-files".
+        \n\nDirectorFM также нуждается в этом разрешении. Нажав «Согласен» здесь, выберите <b>Allow access to manage all files</b> на следующем экране.
         \n\n<font color='#ff6347'><i>Отмена этого диалога приведет к выходу из приложения.</i></font></body></html>
     </string>
     <string name="permission_dialog_button_grant">Предоставить</string>
     <string name="permission_dialog_button_deny">Отклонить</string>
     <string name="permission_toas_not_granted">Разрешение все ещё не получено!</string>
+
+    //Описания
+    <string name="app_bar_home_button_description">К основному меню</string>
+    <string name="app_bar_search_button_description">Поиск</string>
 </resources>

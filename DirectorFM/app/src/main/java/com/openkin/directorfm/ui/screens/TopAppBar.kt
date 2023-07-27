@@ -29,7 +29,6 @@ fun TopAppBar(
     //убрать после реализации поиска
     val searchIsDone = false
 
-    //var screenTitle = stringResource(id = R.string.home_screen_app_bar_title)
     val screenTitle: String = when(screenState) {
         is MainScreenUiState.HomeScreen ->
             stringResource(id = R.string.home_screen_app_bar_title)
@@ -59,7 +58,9 @@ fun TopAppBar(
                 IconButton(onClick = { onHomeClicked() }) {
                     Icon(
                         imageVector = Icons.Filled.Home,
-                        contentDescription = "К основному меню",
+                        contentDescription = stringResource(
+                            id = R.string.app_bar_home_button_description
+                        ),
                         tint = Color.White
                     )
                 }
@@ -67,7 +68,9 @@ fun TopAppBar(
                     IconButton(onClick = { onSearchClicked() }) {
                         Icon(
                             imageVector = Icons.Filled.Search,
-                            contentDescription = "Поиск",
+                            contentDescription = stringResource(
+                                id = R.string.app_bar_search_button_description
+                            ),
                             tint = Color.White
                         )
                     }
