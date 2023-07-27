@@ -10,6 +10,7 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -47,6 +48,15 @@ fun DirectorFMTheme(
             (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
             ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
         }
+    }
+
+    SideEffect {
+        val window = (view.context as Activity).window
+//        val insets = WindowCompat.getInsetsController(window, view)
+        window.statusBarColor = Color.Blue.toArgb() // choose a status bar color
+//        window.navigationBarColor = colorScheme.whatever.toArgb() // choose a navigation bar color
+//        insets.isAppearanceLightStatusBars = !useDarkTheme
+//        insets.isAppearanceLightNavigationBars = !useDarkTheme
     }
 
     MaterialTheme(

@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">DirectorFM</string>
 
+    //Элементы app bar
+    <string name="home_screen_app_bar_title">Основное меню</string>
+    <string name="home_button">К основному меню</string>
+
     //Элементы стартового экрана
     <string name="home_screen_internal_storage">Память устройства</string>
     <string name="home_screen_bookmarks">Закладки</string>

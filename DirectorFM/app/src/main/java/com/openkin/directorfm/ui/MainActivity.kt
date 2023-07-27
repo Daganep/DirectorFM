@@ -13,7 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.ui.res.stringResource
 import com.openkin.directorfm.R
 import com.openkin.directorfm.ui.screens.BaseAlertDialog
-import com.openkin.directorfm.ui.screens.HomeScreen
+import com.openkin.directorfm.ui.screens.StartScreen
 import com.openkin.directorfm.ui.theme.DirectorFMTheme
 import kotlin.system.exitProcess
 
@@ -22,11 +22,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            if (Environment.isExternalStorageManager()) {
-                DirectorFMTheme {
-                    HomeScreen()
-                }
-            } else {
+            if (!Environment.isExternalStorageManager()) {
                 BaseAlertDialog(
                     dialogTitle = stringResource(id = R.string.permission_dialog_all_files_title),
                     dialogText = stringResource(id = R.string.permission_dialog_all_files_text),
@@ -35,6 +31,9 @@ class MainActivity : ComponentActivity() {
                         exitProcess(0)
                     }
                 )
+            }
+            DirectorFMTheme {
+                StartScreen()
             }
         }
     }

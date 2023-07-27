@@ -1,55 +1,61 @@
 package com.openkin.directorfm.ui.screens
 
-import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import com.openkin.directorfm.R
+import com.openkin.directorfm.constants.Constants.APPLICATIONS
+import com.openkin.directorfm.constants.Constants.BOOKMARKS
+import com.openkin.directorfm.constants.Constants.DOCUMENTS
+import com.openkin.directorfm.constants.Constants.DOWNLOADS
+import com.openkin.directorfm.constants.Constants.INTERNAL_STORAGE
+import com.openkin.directorfm.constants.Constants.PHOTOS
 import com.openkin.directorfm.ui.model.FileCard
-import com.openkin.directorfm.ui.model.UiFile
-import com.openkin.directorfm.viewmodels.MainScreenViewModel
-import org.koin.androidx.compose.koinViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(viewModel: MainScreenViewModel = koinViewModel()){
-
-    val filesList: List<UiFile> by
-        viewModel.currentDirectoryFilesList.observeAsState(
-            viewModel.homeScreenShortcuts.homeScreenList
-        )
-
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        topBar = { TopAppBar(
-            currentFile = viewModel.currentFile,
-            onSearchClicked = { viewModel.openSearch() }
-        )}
-    ) {
-        Surface(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)
-        ) {
-            LazyColumn {
-                for (file in filesList) {
-                    item {
-                        FileCard(
-                            name = file.name,
-                            path = file.path,
-                            icon = file.icon
-                        ) { viewModel.getFilesList(file.path) }
-                    }
-                }
-            }
+fun HomeScreen(onShortcutClicked: (String) -> Unit) {
+    LazyColumn {
+        item {
+            FileCard(
+                name = stringResource(id = R.string.home_screen_internal_storage),
+                path = INTERNAL_STORAGE,
+                icon = R.drawable.ic_internal_storage
+            ) { onShortcutClicked(INTERNAL_STORAGE) }
+        }
+        item {
+            FileCard(
+                name = stringResource(id = R.string.home_screen_documents),
+                path = DOCUMENTS,
+                icon = R.drawable.ic_documents
+            ) { onShortcutClicked(DOCUMENTS) }
+        }
+        item {
+            FileCard(
+                name = stringResource(id = R.string.home_screen_photos),
+                path = PHOTOS,
+                icon = R.drawable.ic_photos
+            ) { onShortcutClicked(PHOTOS) }
+        }
+        item {
+            FileCard(
+                name = stringResource(id = R.string.home_screen_downloads),
+                path = DOWNLOADS,
+                icon = R.drawable.ic_downloads
+            ) { onShortcutClicked(DOWNLOADS) }
+        }
+        item {
+            FileCard(
+                name = stringResource(id = R.string.home_screen_bookmarks),
+                path = BOOKMARKS,
+                icon = R.drawable.ic_favorites
+            ) { onShortcutClicked(BOOKMARKS) }
+        }
+        item {
+            FileCard(
+                name = stringResource(id = R.string.home_screen_applications),
+                path = APPLICATIONS,
+                icon = R.drawable.ic_apps
+            ) { onShortcutClicked(APPLICATIONS) }
         }
     }
-
-    BackHandler(enabled = viewModel.getCurrentFileParent() == null) {
-        viewModel.returnToPreviousDirectory()
-    }
-
 }

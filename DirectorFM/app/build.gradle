@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.openkin.directorfm"
-        minSdk 29
+        minSdk 30
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -49,7 +49,9 @@ dependencies {
     implementation libraries.androidxCore
     implementation libraries.androidxAppCompat
     implementation libraries.androidMaterial
+    implementation "androidx.compose.material:material:1.4.3"
     implementation libraries.androidxConstraintlayout
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.27.0"
 
     //viewmodel
     implementation libraries.viewModel
