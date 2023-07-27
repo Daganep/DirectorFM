@@ -9,15 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.stringResource
-import com.openkin.data.utils.TextUtil
 import com.openkin.directorfm.R
+import com.openkin.directorfm.ui.model.PermissionRequestText
 
 @Composable
-fun BaseAlertDialog(
-    dialogTitle: String = TextUtil.EMPTY,
-    dialogText: String,
-    confirmButtonText: String = stringResource(id = R.string.dialog_button_confirm),
-    dismissButtonText: String = stringResource(id = R.string.dialog_button_dismiss),
+fun PermissionDialog(
     onConfirm: () -> Unit,
     onDismiss: () -> Unit,
     onDismissRequest: (() -> Unit)? = null
@@ -28,14 +24,16 @@ fun BaseAlertDialog(
             if (openDialog.value) {
                 AlertDialog(
                     onDismissRequest = { onDismissRequest?.invoke() },
-                    title = { Text(text = dialogTitle) },
-                    text = { Text(text = dialogText) },
+                    title = {
+                        Text(text = stringResource(id = R.string.permission_dialog_all_files_title))
+                    },
+                    text = { PermissionRequestText() },
                     confirmButton = {
                         Button(onClick = {
                             openDialog.value = false
                             onConfirm.invoke()
                         }) {
-                            Text(confirmButtonText)
+                            Text(stringResource(id = R.string.dialog_button_confirm))
                         }
                     },
                     dismissButton = {
@@ -43,7 +41,7 @@ fun BaseAlertDialog(
                             openDialog.value = false
                             onDismiss.invoke()
                         }) {
-                            Text(dismissButtonText)
+                            Text(stringResource(id = R.string.dialog_button_dismiss))
                         }
                     }
                 )

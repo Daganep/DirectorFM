@@ -19,11 +19,15 @@
 
     //grant permissions
     <string name="permission_dialog_all_files_title">Permission needed</string>
-    <string name="permission_dialog_all_files_text"><html><body>Since Android 11, Google requests File Managers to request user permission for managing all files on the device. Details <a href="https://developer.android.com/training/data-storage/manage-all-files" target="_blank">here</a>.
+    <string name="permission_dialog_all_files_text"><html><body>Since Android 11, Google requests File Managers to request user permission for managing all files on the device. Details: https://developer.android.com/training/data-storage/manage-all-files.
         \n\nDirectorFM needs this permission too. After pressing &quot;Grant&quot;here, please select <b>Allow access to manage all files</b> option on the next screen.
         \n\n<font color='#ff6347'><i>Canceling this dialog will exit the app.</i></font></body></html>
     </string>
     <string name="permission_dialog_button_grant">Grant permission</string>
     <string name="permission_dialog_button_deny">Cancel</string>
     <string name="permission_toas_not_granted">Permission still not granted!</string>
+
+    /descriptions
+    <string name="app_bar_home_button_description">Back to main menu</string>
+    <string name="app_bar_search_button_description">Search</string>
 </resources>
