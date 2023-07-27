@@ -6,5 +6,5 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-    viewModel { MainScreenViewModel(mainScreenInteractor =  get()) }
+    viewModel { MainScreenViewModel() }
 }

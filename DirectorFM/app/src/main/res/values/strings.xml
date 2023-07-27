@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">DirectorFM</string>
 
+    //app bar
+    <string name="home_screen_app_bar_title">Main menu</string>
+    <string name="home_button">To main menu</string>
+
     //home screen elements
     <string name="home_screen_internal_storage">Internal storage</string>
     <string name="home_screen_bookmarks">Bookmarks</string>
@@ -8,4 +12,18 @@
     <string name="home_screen_photos">Photos</string>
     <string name="home_screen_downloads">Downloads</string>
     <string name="home_screen_applications">Applications</string>
+
+    //alert dialog
+    <string name="dialog_button_confirm">Confirm</string>
+    <string name="dialog_button_dismiss">Dismiss</string>
+
+    //grant permissions
+    <string name="permission_dialog_all_files_title">Permission needed</string>
+    <string name="permission_dialog_all_files_text"><html><body>Since Android 11, Google requests File Managers to request user permission for managing all files on the device. Details <a href="https://developer.android.com/training/data-storage/manage-all-files" target="_blank">here</a>.
+        \n\nDirectorFM needs this permission too. After pressing &quot;Grant&quot;here, please select <b>Allow access to manage all files</b> option on the next screen.
+        \n\n<font color='#ff6347'><i>Canceling this dialog will exit the app.</i></font></body></html>
+    </string>
+    <string name="permission_dialog_button_grant">Grant permission</string>
+    <string name="permission_dialog_button_deny">Cancel</string>
+    <string name="permission_toas_not_granted">Permission still not granted!</string>
 </resources>

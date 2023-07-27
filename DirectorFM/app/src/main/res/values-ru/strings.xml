@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">DirectorFM</string>
 
+    //Элементы app bar
+    <string name="home_screen_app_bar_title">Основное меню</string>
+    <string name="home_button">К основному меню</string>
+
     //Элементы стартового экрана
     <string name="home_screen_internal_storage">Память устройства</string>
     <string name="home_screen_bookmarks">Закладки</string>
@@ -8,4 +12,18 @@
     <string name="home_screen_photos">Фото</string>
     <string name="home_screen_downloads">Загрузки</string>
     <string name="home_screen_applications">Приложения</string>
+
+    //Алер диалог
+    <string name="dialog_button_confirm">Согласен</string>
+    <string name="dialog_button_dismiss">Не согласен</string>
+
+    //Получение разрешений
+    <string name="permission_dialog_all_files_title">Необходимо разрешение</string>
+    <string name="permission_dialog_all_files_text"><html><body>Начиная с Android 11, Google запрашивает у файловых менеджеров разрешение пользователя на управление всеми файлами на устройстве. Подробности <a href="https://developer.android.com/training/data-storage/manage-all-files" target="_blank">здесь</a>.
+        \n\nDirectorFM также нуждается в этом разрешении. Нажав «Предоставить» здесь, выберите <b>Allow access to manage all files</b> на следующем экране.
+        \n\n<font color='#ff6347'><i>Отмена этого диалога приведет к выходу из приложения.</i></font></body></html>
+    </string>
+    <string name="permission_dialog_button_grant">Предоставить</string>
+    <string name="permission_dialog_button_deny">Отклонить</string>
+    <string name="permission_toas_not_granted">Разрешение все ещё не получено!</string>
 </resources>
