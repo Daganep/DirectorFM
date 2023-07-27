@@ -11,5 +11,6 @@ object Constants {
     const val DOCUMENTS = "/storage/emulated/0/Documents"
     const val PHOTOS = "/storage/emulated/0/DCIM"
     const val DOWNLOADS = "/storage/emulated/0/Download"
+    const val LIST_ELEMENT_BACK_BUTTON = "..."
     const val APPLICATIONS = TextUtil.EMPTY
 }
