@@ -32,7 +32,7 @@ fun FileCard(name: String, path: String, icon: Int, onClick: () -> Unit) {
             modifier = Modifier.align(Alignment.CenterVertically)
                 .padding(start = 16.dp)
         ) {
-            Text(text = name)
+            Text(text = name, maxLines = 1)
             if (path.isNotBlank()) {
                 Text(text = path, fontSize = 12.sp, maxLines = 1)
             }
